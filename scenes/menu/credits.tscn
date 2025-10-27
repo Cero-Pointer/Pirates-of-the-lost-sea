@@ -1,0 +1,191 @@
+[gd_scene load_steps=10 format=3 uid="uid://bsvbiwerw4nns"]
+
+[ext_resource type="Script" path="res://scripts/menu/credits.gd" id="1_me7lu"]
+[ext_resource type="Texture2D" uid="uid://cpa547oun3seo" path="res://assets/ui/MenuTempBig.png" id="2_6u54c"]
+[ext_resource type="Theme" uid="uid://c8csw2huunlm7" path="res://assets/menu/fontMenu.tres" id="2_nstut"]
+[ext_resource type="Texture2D" uid="uid://bvsjfly05o0yq" path="res://assets/ui/ButtonBig.png" id="4_4puwt"]
+[ext_resource type="Texture2D" uid="uid://dtij8far6rqti" path="res://assets/menu/PirateFlo.png" id="5_5c15b"]
+[ext_resource type="Texture2D" uid="uid://c1mdbfd1e8ud7" path="res://assets/menu/PirateRicardo.png" id="6_5tj3l"]
+[ext_resource type="Texture2D" uid="uid://8f4h8bjnmpr0" path="res://assets/menu/PirateIna.png" id="7_g12kn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m38x8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8fdon"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_me7lu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -1104.0
+offset_top = -712.0
+offset_right = 1155.0
+offset_bottom = 734.0
+color = Color(0, 0, 0, 0.588235)
+
+[node name="MenuTempBig" type="Sprite2D" parent="."]
+position = Vector2(30.5, -21.5)
+scale = Vector2(0.793416, 0.517653)
+texture = ExtResource("2_6u54c")
+
+[node name="ColorRect" type="ColorRect" parent="MenuTempBig"]
+offset_left = -671.0
+offset_top = -903.0
+offset_right = 662.0
+offset_bottom = 901.0
+color = Color(0, 0, 0, 0.2)
+
+[node name="Ricardo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 97.0
+offset_top = 154.0
+offset_right = 331.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 8
+theme = ExtResource("2_nstut")
+theme_override_colors/font_color = Color(0.580474, 0.188518, 0.0592538, 1)
+theme_override_font_sizes/font_size = 78
+text = "Ricardo"
+
+[node name="Label" type="Label" parent="Ricardo"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 69.0
+offset_right = 234.0
+offset_bottom = 129.0
+theme = ExtResource("2_nstut")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Müller"
+
+[node name="Florian" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.0
+offset_top = -438.0
+offset_right = 209.0
+offset_bottom = -342.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_nstut")
+theme_override_colors/font_color = Color(0.147012, 0.342035, 0.660305, 1)
+theme_override_font_sizes/font_size = 80
+text = "Florian"
+
+[node name="Label" type="Label" parent="Florian"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 67.0
+offset_right = 228.0
+offset_bottom = 127.0
+theme = ExtResource("2_nstut")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Drews"
+
+[node name="Ina" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -236.0
+offset_top = 148.0
+offset_right = -116.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("2_nstut")
+theme_override_colors/font_color = Color(0.603817, 0.000240557, 0.595369, 1)
+theme_override_font_sizes/font_size = 75
+text = "Ina
+"
+
+[node name="Label" type="Label" parent="Ina"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 68.0
+offset_right = 150.0
+offset_bottom = 119.0
+theme = ExtResource("2_nstut")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "Schönau"
+
+[node name="ButtonBig" type="Sprite2D" parent="."]
+position = Vector2(-794.2, 489.746)
+scale = Vector2(0.6375, 0.658224)
+texture = ExtResource("4_4puwt")
+
+[node name="backToMenu" type="Button" parent="ButtonBig"]
+offset_left = -223.0
+offset_top = -53.0
+offset_right = 236.0
+offset_bottom = 52.0
+theme = ExtResource("2_nstut")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m38x8")
+text = "back to main menu"
+flat = true
+
+[node name="ButtonBig2" type="Sprite2D" parent="."]
+position = Vector2(826, 498)
+scale = Vector2(0.5, 0.485)
+texture = ExtResource("4_4puwt")
+
+[node name="Quit" type="Button" parent="ButtonBig2"]
+offset_left = -230.0
+offset_top = -47.4227
+offset_right = 228.0
+offset_bottom = 44.5773
+theme = ExtResource("2_nstut")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8fdon")
+text = "Quit"
+flat = true
+
+[node name="PirateFlo" type="Sprite2D" parent="."]
+position = Vector2(-65, -218)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_5c15b")
+
+[node name="PirateRicardo" type="Sprite2D" parent="."]
+position = Vector2(297, 43)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_5tj3l")
+
+[node name="PirateIna" type="Sprite2D" parent="."]
+position = Vector2(-314, 182)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_g12kn")
+
+[connection signal="pressed" from="ButtonBig/backToMenu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="ButtonBig2/Quit" to="." method="_on_quit_pressed"]

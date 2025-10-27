@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c8csw2huunlm7"]
+
+[ext_resource type="FontFile" uid="uid://bvkvs6wtflcal" path="res://assets/fonts/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.ttf" id="1_1hql4"]
+
+[resource]
+default_font = ExtResource("1_1hql4")
+default_font_size = 40

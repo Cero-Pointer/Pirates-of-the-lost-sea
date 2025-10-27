@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://b2pjceqvv4lu1"]
+
+[node name="ItemSpawner" type="Node2D"]
+y_sort_enabled = true

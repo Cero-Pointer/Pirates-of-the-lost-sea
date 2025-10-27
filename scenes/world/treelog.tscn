@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv4487y3lo3cm"]
+
+[ext_resource type="Texture2D" uid="uid://gfm4wjkoem3i" path="res://assets/map/treelog.png" id="1_fcma5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cq305"]
+size = Vector2(28, 12)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Treelog" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_fcma5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_cq305")

@@ -1,0 +1,198 @@
+[gd_scene load_steps=15 format=3 uid="uid://bg0fh5dxjhlyv"]
+
+[ext_resource type="Script" path="res://scripts/menu/game_over.gd" id="1_rjrvi"]
+[ext_resource type="Texture2D" uid="uid://4u6bmjxmyr7w" path="res://assets/menu/gameover_scren_withCrabb(big)t.png" id="2_kpbxv"]
+[ext_resource type="Texture2D" uid="uid://ks4vuow8uy0x" path="res://assets/menu/map.png" id="3_xdc5v"]
+[ext_resource type="Theme" uid="uid://c8csw2huunlm7" path="res://assets/menu/fontMenu.tres" id="4_vlgpo"]
+[ext_resource type="Texture2D" uid="uid://b3awiaps8feab" path="res://assets/menu/Schild_Stehend.png" id="5_l6wr1"]
+[ext_resource type="Texture2D" uid="uid://d1e63fcd74o6b" path="res://assets/menu/Schild_hängend.png" id="6_eti1q"]
+[ext_resource type="AudioStream" uid="uid://dyrdsc6u5ogun" path="res://assets/audio/arrr.wav" id="7_tabdv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_306ay"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vwj74"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vu0gs"]
+
+[sub_resource type="Animation" id="Animation_ecert"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_jufqu"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nriyf"]
+resource_name = "transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ugxv"]
+_data = {
+"RESET": SubResource("Animation_ecert"),
+"fade_in": SubResource("Animation_jufqu"),
+"fade_out": SubResource("Animation_nriyf")
+}
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rjrvi")
+
+[node name="GameoverScrenWithCrabb(big)t" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1.875, 2.10937)
+texture = ExtResource("2_kpbxv")
+
+[node name="Map" type="Sprite2D" parent="."]
+position = Vector2(159, 941)
+rotation = 0.0645772
+scale = Vector2(0.535938, 0.446165)
+texture = ExtResource("3_xdc5v")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 882.0
+offset_right = 203.0
+offset_bottom = 975.0
+rotation = 0.340339
+theme = ExtResource("4_vlgpo")
+theme_override_colors/font_color = Color(0.608989, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_306ay")
+text = "Quit"
+flat = true
+
+[node name="SchildStehend" type="Sprite2D" parent="."]
+position = Vector2(857, 805)
+scale = Vector2(0.599365, 0.73407)
+texture = ExtResource("5_l6wr1")
+
+[node name="StartAgain" type="Button" parent="."]
+layout_mode = 0
+offset_left = 758.0
+offset_top = 673.0
+offset_right = 960.0
+offset_bottom = 807.0
+theme = ExtResource("4_vlgpo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vwj74")
+text = "Yes"
+flat = true
+
+[node name="SchildHängend" type="Sprite2D" parent="."]
+position = Vector2(1415.88, 141.656)
+scale = Vector2(0.70752, 0.544311)
+texture = ExtResource("6_eti1q")
+
+[node name="BackToMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1285.0
+offset_top = 86.0
+offset_right = 1571.0
+offset_bottom = 241.0
+theme = ExtResource("4_vlgpo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vu0gs")
+text = "Back to Main Menu"
+flat = true
+text_overrun_behavior = 2
+autowrap_mode = 2
+
+[node name="transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4ugxv")
+}
+
+[node name="ColorRect" type="ColorRect" parent="transition"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ArrrrSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_tabdv")
+bus = &"SFX"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="StartAgain" to="." method="_on_start_again_pressed"]
+[connection signal="pressed" from="BackToMenu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="animation_finished" from="transition" to="." method="_on_transition_animation_finished"]

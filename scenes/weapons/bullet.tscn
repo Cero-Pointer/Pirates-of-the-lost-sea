@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://ptdgr7dnar83"]
+
+[ext_resource type="Script" path="res://scripts/weapons/bullet.gd" id="1_s278g"]
+[ext_resource type="Texture2D" uid="uid://d3j43pdogvi7g" path="res://assets/weapons/All_Fire_Bullet_Pixel_16x16_06.png" id="2_bgbog"]
+[ext_resource type="AudioStream" uid="uid://sc2lnkyujfve" path="res://assets/audio/gunshot.mp3" id="3_qxms0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v6m3"]
+atlas = ExtResource("2_bgbog")
+region = Rect2(176, 126, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15r5p"]
+atlas = ExtResource("2_bgbog")
+region = Rect2(192, 126, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wtnf"]
+atlas = ExtResource("2_bgbog")
+region = Rect2(208, 126, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfrrd"]
+atlas = ExtResource("2_bgbog")
+region = Rect2(224, 126, 16, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hor6k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v6m3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15r5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wtnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfrrd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ksgkl"]
+radius = 15.0
+
+[node name="Bullet" type="Area2D"]
+y_sort_enabled = true
+collision_layer = 32
+collision_mask = 8
+script = ExtResource("1_s278g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_hor6k")
+autoplay = "default"
+frame_progress = 0.12583
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_ksgkl")
+
+[node name="Despawn" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qxms0")
+autoplay = true
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Despawn" to="." method="_on_despawn_timeout"]

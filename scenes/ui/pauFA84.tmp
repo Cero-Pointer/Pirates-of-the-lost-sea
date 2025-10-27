@@ -1,0 +1,160 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs7vr6t5b8ja"]
+
+[ext_resource type="Texture2D" uid="uid://cpa547oun3seo" path="res://assets/ui/MenuTempBig.png" id="2_ep35d"]
+[ext_resource type="Theme" uid="uid://c8csw2huunlm7" path="res://assets/menu/fontMenu.tres" id="2_mj7xf"]
+[ext_resource type="Texture2D" uid="uid://bvsjfly05o0yq" path="res://assets/ui/ButtonBig.png" id="4_7rimj"]
+
+[sub_resource type="GDScript" id="GDScript_aeeys"]
+script/source = "extends Control
+
+@onready var pause_menu = get_node(\"/root/Game/PauseMenuCanvas\")
+@onready var control = $\"../../Control\"
+
+signal quit
+
+func _on_resume_pressed() -> void:
+	control.set_cursor()
+	get_tree().paused = false
+	pause_menu.hide()
+
+
+func _on_main_menu_pressed() -> void:
+	SaveManager.update_all_collected_coins()
+	SaveManager.save_var()
+	control.reset_cursor()
+	get_tree().paused = false
+	get_tree().change_scene_to_file(\"res://scenes/menu/menu.tscn\")
+
+
+func _on_quit_pressed() -> void:
+	quit.emit()
+	SaveManager.save_var()
+	get_tree().quit()
+
+
+func _process(delta):
+	if Input.is_action_just_pressed(\"Pause\") and !get_tree().paused:
+		control.reset_cursor()
+		pause_menu.show()
+		get_tree().paused = true
+
+
+func _on_how_play_pressed() -> void:
+	get_tree().paused = true
+	get_tree().change_scene_to_file(\"res://scenes/ui/ControlsMenu.tscn\")
+	
+"
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = SubResource("GDScript_aeeys")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -72.0
+offset_top = -93.0
+offset_right = 1992.0
+offset_bottom = 1162.0
+color = Color(0, 0, 0, 0.356863)
+
+[node name="MenuTempBig" type="Sprite2D" parent="."]
+position = Vector2(980, 550)
+scale = Vector2(0.405534, 0.394561)
+texture = ExtResource("2_ep35d")
+
+[node name="Label" type="Label" parent="MenuTempBig"]
+offset_left = -266.0
+offset_top = -910.0
+offset_right = 234.0
+offset_bottom = -670.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("2_mj7xf")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 200
+text = "Pause"
+
+[node name="ButtonBig" type="Sprite2D" parent="MenuTempBig"]
+position = Vector2(-15, -450)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("4_7rimj")
+
+[node name="Resume" type="Button" parent="MenuTempBig/ButtonBig"]
+offset_left = -90.302
+offset_top = -51.3194
+offset_right = 87.698
+offset_bottom = 23.6806
+theme = ExtResource("2_mj7xf")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+text = "Resume"
+flat = true
+
+[node name="ButtonBig2" type="Sprite2D" parent="MenuTempBig"]
+position = Vector2(-15, -100)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("4_7rimj")
+
+[node name="HowPlay" type="Button" parent="MenuTempBig/ButtonBig2"]
+offset_left = -104.001
+offset_top = -47.2309
+offset_right = 101.999
+offset_bottom = 27.7691
+theme = ExtResource("2_mj7xf")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+text = "Control"
+flat = true
+
+[node name="ButtonBig3" type="Sprite2D" parent="MenuTempBig"]
+position = Vector2(-15, 600)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("4_7rimj")
+
+[node name="Quit" type="Button" parent="MenuTempBig/ButtonBig3"]
+offset_left = -51.9437
+offset_top = -44.6862
+offset_right = 44.0563
+offset_bottom = 30.3138
+theme = ExtResource("2_mj7xf")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+text = "Quit"
+flat = true
+
+[node name="ButtonBig4" type="Sprite2D" parent="MenuTempBig"]
+position = Vector2(-15, 250)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("4_7rimj")
+
+[node name="MainMenu" type="Button" parent="MenuTempBig/ButtonBig4"]
+offset_left = -123.18
+offset_top = -50.1827
+offset_right = 126.82
+offset_bottom = 24.8173
+theme = ExtResource("2_mj7xf")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+text = "Main Menu"
+flat = true
+
+[connection signal="pressed" from="MenuTempBig/ButtonBig/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MenuTempBig/ButtonBig2/HowPlay" to="." method="_on_how_play_pressed"]
+[connection signal="pressed" from="MenuTempBig/ButtonBig3/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MenuTempBig/ButtonBig4/MainMenu" to="." method="_on_main_menu_pressed"]

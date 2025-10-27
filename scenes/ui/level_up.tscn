@@ -1,0 +1,151 @@
+[gd_scene load_steps=6 format=3 uid="uid://c03qn1ldynhue"]
+
+[ext_resource type="Script" path="res://scripts/menu/level_up.gd" id="1_3yu57"]
+[ext_resource type="Texture2D" uid="uid://60y4exx6gqkt" path="res://assets/ui/Card1.png" id="2_37c8v"]
+[ext_resource type="Theme" uid="uid://c8csw2huunlm7" path="res://assets/menu/fontMenu.tres" id="2_cjcne"]
+[ext_resource type="Texture2D" uid="uid://bsccf1crs77jw" path="res://assets/ui/ControlBarHead.png" id="4_7tkxm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i4lsr"]
+
+[node name="LevelUp" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3yu57")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -1142.0
+offset_top = -645.0
+offset_right = 1261.0
+offset_bottom = 678.0
+color = Color(0, 0, 0, 0.333333)
+
+[node name="Card2" type="Sprite2D" parent="."]
+position = Vector2(-160, 150)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_37c8v")
+
+[node name="GunAttackSpeed" type="Button" parent="Card2"]
+offset_left = -141.0
+offset_top = -124.0
+offset_right = 150.0
+offset_bottom = 135.0
+theme = ExtResource("2_cjcne")
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i4lsr")
+text = "Faster Gun Reloading Speed (0)"
+flat = true
+text_overrun_behavior = 2
+autowrap_mode = 3
+
+[node name="Card3" type="Sprite2D" parent="."]
+position = Vector2(-150, -100)
+rotation = 3.14159
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_37c8v")
+
+[node name="WalkingSpeed" type="Button" parent="Card3"]
+offset_left = 152.0
+offset_top = 138.0
+offset_right = 436.0
+offset_bottom = 401.0
+rotation = 3.14159
+size_flags_vertical = 4
+theme = ExtResource("2_cjcne")
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i4lsr")
+text = "Faster Walking Speed (0)"
+flat = true
+text_overrun_behavior = 2
+autowrap_mode = 3
+
+[node name="Card4" type="Sprite2D" parent="."]
+position = Vector2(150, 160)
+rotation = 3.14159
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_37c8v")
+
+[node name="FullyHeal" type="Button" parent="Card4"]
+offset_left = 140.0
+offset_top = 122.0
+offset_right = 398.0
+offset_bottom = 357.0
+rotation = 3.14159
+theme = ExtResource("2_cjcne")
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i4lsr")
+text = "Fully Heal"
+flat = true
+text_overrun_behavior = 2
+autowrap_mode = 3
+
+[node name="Card1" type="Sprite2D" parent="."]
+position = Vector2(150, -100)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_37c8v")
+
+[node name="Invulnerability" type="Button" parent="Card1"]
+offset_left = -135.0
+offset_top = -120.0
+offset_right = 150.0
+offset_bottom = 138.0
+size_flags_vertical = 4
+theme = ExtResource("2_cjcne")
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i4lsr")
+text = "10 seconds invulnerability "
+flat = true
+text_overrun_behavior = 2
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = -207.0
+offset_top = -361.0
+offset_right = 233.0
+offset_bottom = -238.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("2_cjcne")
+theme_override_font_sizes/font_size = 50
+text = "Level Up!
+Choose your update
+"
+horizontal_alignment = 1
+
+[node name="ControlBarHead" type="Sprite2D" parent="."]
+position = Vector2(-2.74999, 25.5)
+scale = Vector2(0.237305, 0.201172)
+texture = ExtResource("4_7tkxm")
+
+[connection signal="pressed" from="Card2/GunAttackSpeed" to="." method="_on_gun_attack_speed_pressed"]
+[connection signal="pressed" from="Card3/WalkingSpeed" to="." method="_on_walking_speed_pressed"]
+[connection signal="pressed" from="Card4/FullyHeal" to="." method="_on_fully_heal_pressed"]
+[connection signal="pressed" from="Card1/Invulnerability" to="." method="_on_invulnerability_pressed"]

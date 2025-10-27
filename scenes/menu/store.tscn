@@ -1,0 +1,305 @@
+[gd_scene load_steps=14 format=3 uid="uid://dqs7nbyph4l4n"]
+
+[ext_resource type="Script" path="res://scripts/menu/level_up_stats.gd" id="1_6tqbm"]
+[ext_resource type="AudioStream" uid="uid://cbcemaj8smhjp" path="res://assets/audio/coin.ogg" id="2_d06ld"]
+[ext_resource type="Theme" uid="uid://c8csw2huunlm7" path="res://assets/menu/fontMenu.tres" id="2_l188i"]
+[ext_resource type="Texture2D" uid="uid://ck2g2gp6cnq3r" path="res://assets/Items/4.png" id="3_lxwb1"]
+[ext_resource type="Texture2D" uid="uid://d2q1gxtp2wisg" path="res://assets/menu/ScreenWithout.png" id="4_raskj"]
+[ext_resource type="Texture2D" uid="uid://bcb4dv0jjn181" path="res://assets/menu/bookWithoutBIg.png" id="6_2nmkw"]
+[ext_resource type="Texture2D" uid="uid://bvsjfly05o0yq" path="res://assets/ui/ButtonBig.png" id="6_n53us"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b3cbi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geei8"]
+bg_color = Color(0, 0.718344, 0.363086, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jwwuq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0go2d"]
+bg_color = Color(0.764706, 0, 0.101961, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s54r0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6be7"]
+
+[node name="Store" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6tqbm")
+
+[node name="BuySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_d06ld")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HomeScreenBig" type="Sprite2D" parent="."]
+position = Vector2(959.999, 539.5)
+scale = Vector2(1.87402, 2.10938)
+texture = ExtResource("4_raskj")
+
+[node name="BookWithoutBIg" type="Sprite2D" parent="."]
+position = Vector2(957, 542)
+scale = Vector2(0.982824, 1.03244)
+texture = ExtResource("6_2nmkw")
+
+[node name="SwordUnlockButton" type="Button" parent="BookWithoutBIg"]
+offset_left = -700.0
+offset_top = -360.0
+offset_right = -316.0
+offset_bottom = -168.0
+theme = ExtResource("2_l188i")
+theme_override_colors/font_hover_pressed_color = Color(0.886766, 0.745997, 0.622123, 1)
+theme_override_colors/font_hover_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_pressed_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b3cbi")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_geei8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jwwuq")
+text = "Unlock Automatic
+Sword Attack
+200"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="BookWithoutBIg/SwordUnlockButton"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 128.0
+offset_right = 160.0
+offset_bottom = 176.0
+texture = ExtResource("3_lxwb1")
+metadata/_edit_use_anchors_ = true
+
+[node name="EXPCollectionRateButton" type="Button" parent="BookWithoutBIg"]
+custom_minimum_size = Vector2(384, 200)
+offset_left = 284.893
+offset_top = -158.847
+offset_right = 668.893
+offset_bottom = 41.1534
+theme = ExtResource("2_l188i")
+theme_override_colors/font_hover_pressed_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_hover_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_pressed_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b3cbi")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0go2d")
+text = "Upgrade
+EXP Collection Rate
+(Currently: +0)
+50"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="BookWithoutBIg/EXPCollectionRateButton"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 152.0
+offset_right = 168.0
+offset_bottom = 200.0
+texture = ExtResource("3_lxwb1")
+metadata/_edit_use_anchors_ = true
+
+[node name="HPButton" type="Button" parent="BookWithoutBIg"]
+custom_minimum_size = Vector2(384, 200)
+offset_left = 285.911
+offset_top = 59.0832
+offset_right = 669.911
+offset_bottom = 259.083
+theme = ExtResource("2_l188i")
+theme_override_colors/font_hover_pressed_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_hover_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_pressed_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b3cbi")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0go2d")
+text = "Upgrade
+Health Points
+(Currently: +0)
+100"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="BookWithoutBIg/HPButton"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 152.0
+offset_right = 168.0
+offset_bottom = 200.0
+texture = ExtResource("3_lxwb1")
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinCollectionRateButton" type="Button" parent="BookWithoutBIg"]
+custom_minimum_size = Vector2(384, 200)
+offset_left = 287.946
+offset_top = -368.059
+offset_right = 671.946
+offset_bottom = -168.059
+theme = ExtResource("2_l188i")
+theme_override_colors/font_hover_pressed_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_hover_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_pressed_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b3cbi")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0go2d")
+text = "Upgrade
+Coin Collection Rate
+(Currently: +0)
+50"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="BookWithoutBIg/CoinCollectionRateButton"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 152.0
+offset_right = 168.0
+offset_bottom = 200.0
+texture = ExtResource("3_lxwb1")
+metadata/_edit_use_anchors_ = true
+
+[node name="SwordAttackSpeedButton" type="Button" parent="BookWithoutBIg"]
+custom_minimum_size = Vector2(384, 200)
+offset_left = -699.006
+offset_top = 79.4233
+offset_right = -315.006
+offset_bottom = 279.423
+theme = ExtResource("2_l188i")
+theme_override_colors/font_hover_pressed_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_hover_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_pressed_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b3cbi")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0go2d")
+text = "Upgrade
+Sword Attack Speed
+(Currently: +0)
+100"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="BookWithoutBIg/SwordAttackSpeedButton"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 152.0
+offset_right = 168.0
+offset_bottom = 200.0
+texture = ExtResource("3_lxwb1")
+metadata/_edit_use_anchors_ = true
+
+[node name="SwordAttackRangeButton" type="Button" parent="BookWithoutBIg"]
+custom_minimum_size = Vector2(384, 200)
+offset_left = -700.0
+offset_top = -150.0
+offset_right = -316.0
+offset_bottom = 50.0
+theme = ExtResource("2_l188i")
+theme_override_colors/font_hover_pressed_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_hover_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_pressed_color = Color(0.886275, 0.745098, 0.623529, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b3cbi")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0go2d")
+text = "Upgrade
+Sword Attack Range
+(Currently: +0)
+0"
+flat = true
+text_overrun_behavior = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="BookWithoutBIg/SwordAttackRangeButton"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 152.0
+offset_right = 168.0
+offset_bottom = 200.0
+texture = ExtResource("3_lxwb1")
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonBig" type="Sprite2D" parent="."]
+position = Vector2(979, 50)
+scale = Vector2(0.661334, 0.609746)
+texture = ExtResource("6_n53us")
+
+[node name="CoinAmount" type="Label" parent="ButtonBig"]
+anchors_preset = -1
+anchor_left = -0.0114672
+anchor_top = 0.00420863
+anchor_right = 0.359627
+anchor_bottom = 0.363921
+offset_left = -77.1288
+offset_top = -67.585
+offset_right = 34.8712
+offset_bottom = -21.585
+theme = ExtResource("2_l188i")
+theme_override_font_sizes/font_size = 80
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="ButtonBig"]
+anchors_preset = -1
+anchor_left = -2.28286e-05
+anchor_top = -0.000265986
+anchor_right = 0.0370865
+anchor_bottom = 0.0788707
+offset_left = -187.488
+offset_top = -42.6037
+offset_right = -123.488
+offset_bottom = 21.3963
+texture = ExtResource("3_lxwb1")
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonBig2" type="Sprite2D" parent="."]
+position = Vector2(1516, 996)
+scale = Vector2(0.673828, 0.694245)
+texture = ExtResource("6_n53us")
+
+[node name="ResetAllButton" type="Button" parent="ButtonBig2"]
+offset_left = -216.673
+offset_top = -77.7823
+offset_right = 224.327
+offset_bottom = 43.2177
+theme = ExtResource("2_l188i")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s54r0")
+text = "Reset all"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonBig3" type="Sprite2D" parent="."]
+position = Vector2(939, 997)
+scale = Vector2(0.84375, 0.830935)
+texture = ExtResource("6_n53us")
+
+[node name="BackToMenuButton" type="Button" parent="ButtonBig3"]
+offset_left = -199.111
+offset_top = -89.0562
+offset_right = 206.889
+offset_bottom = 64.9438
+theme = ExtResource("2_l188i")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o6be7")
+text = "Back to Menu"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="BookWithoutBIg/SwordUnlockButton" to="." method="_on_sword_unlocked_pressed"]
+[connection signal="pressed" from="BookWithoutBIg/EXPCollectionRateButton" to="." method="_on_exp_collection_rate_button_pressed"]
+[connection signal="pressed" from="BookWithoutBIg/HPButton" to="." method="_on_hp_button_pressed"]
+[connection signal="pressed" from="BookWithoutBIg/CoinCollectionRateButton" to="." method="_on_coin_collection_rate_button_pressed"]
+[connection signal="pressed" from="BookWithoutBIg/SwordAttackSpeedButton" to="." method="_on_sword_attack_speed_button_pressed"]
+[connection signal="pressed" from="BookWithoutBIg/SwordAttackRangeButton" to="." method="_on_sword_attack_range_button_pressed"]
+[connection signal="pressed" from="ButtonBig2/ResetAllButton" to="." method="_on_reset_all_button_pressed"]
+[connection signal="pressed" from="ButtonBig3/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]

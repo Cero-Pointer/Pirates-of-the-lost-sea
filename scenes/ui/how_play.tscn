@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbxmvcb75jyvs"]
+
+[ext_resource type="Script" path="res://scripts/menu/how_play.gd" id="1_nyxd2"]
+[ext_resource type="Texture2D" uid="uid://cpa547oun3seo" path="res://assets/ui/MenuTempBig.png" id="2_7q1nr"]
+
+[node name="How_Play" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nyxd2")
+
+[node name="MenuTempBig" type="Sprite2D" parent="."]
+position = Vector2(980, 550)
+scale = Vector2(0.406, 0.396)
+texture = ExtResource("2_7q1nr")

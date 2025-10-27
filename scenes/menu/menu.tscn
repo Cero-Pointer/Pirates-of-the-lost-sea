@@ -1,0 +1,258 @@
+[gd_scene load_steps=18 format=3 uid="uid://cfopyw1tv36ep"]
+
+[ext_resource type="Theme" uid="uid://c8csw2huunlm7" path="res://assets/menu/fontMenu.tres" id="1_geqro"]
+[ext_resource type="Script" uid="uid://ddwtgvq283h5f" path="res://scripts/menu/menu.gd" id="2_3eo2y"]
+[ext_resource type="Texture2D" uid="uid://dqo3avekcwa11" path="res://assets/menu/HomeScreen_big.png" id="3_lb5cu"]
+[ext_resource type="AudioStream" uid="uid://dyrdsc6u5ogun" path="res://assets/audio/arrr.wav" id="3_wu33j"]
+[ext_resource type="Texture2D" uid="uid://b3awiaps8feab" path="res://assets/menu/Schild_Stehend.png" id="4_xqafv"]
+[ext_resource type="Texture2D" uid="uid://d1e63fcd74o6b" path="res://assets/menu/Schild_hängend.png" id="5_575c4"]
+[ext_resource type="Texture2D" uid="uid://ks4vuow8uy0x" path="res://assets/menu/map.png" id="6_jp70s"]
+[ext_resource type="Texture2D" uid="uid://fq84lavue2n8" path="res://assets/menu/book.png" id="8_imtnr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6yild"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ukytc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4mb0b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uelgs"]
+
+[sub_resource type="Animation" id="Animation_ecert"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_jufqu"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nriyf"]
+resource_name = "transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ugxv"]
+_data = {
+&"RESET": SubResource("Animation_ecert"),
+&"fade_in": SubResource("Animation_jufqu"),
+&"fade_out": SubResource("Animation_nriyf")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wj1od"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_geqro")
+script = ExtResource("2_3eo2y")
+
+[node name="ArrrrSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wu33j")
+bus = &"SFX"
+
+[node name="HomeScreenBig" type="Sprite2D" parent="."]
+position = Vector2(959.999, 539.5)
+scale = Vector2(1.875, 2.10742)
+texture = ExtResource("3_lb5cu")
+
+[node name="SchildStehend" type="Sprite2D" parent="."]
+position = Vector2(946, 900)
+scale = Vector2(0.512891, 0.493579)
+texture = ExtResource("4_xqafv")
+
+[node name="StartButton" type="Button" parent="SchildStehend"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.327
+anchor_right = 0.5
+anchor_bottom = 0.327
+offset_left = -404.0
+offset_top = -386.424
+offset_right = -67.0
+offset_bottom = -184.424
+theme = ExtResource("1_geqro")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 140
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6yild")
+text = "Start"
+flat = true
+alignment = 0
+
+[node name="SchildHängend" type="Sprite2D" parent="."]
+position = Vector2(1394.38, 751.875)
+scale = Vector2(0.588379, 0.422363)
+texture = ExtResource("5_575c4")
+
+[node name="OptionButton" type="Button" parent="SchildHängend"]
+offset_left = -143.0
+offset_top = -45.0
+offset_right = 164.0
+offset_bottom = 123.0
+theme = ExtResource("1_geqro")
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 130
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ukytc")
+text = "Store"
+flat = true
+
+[node name="Map" type="Sprite2D" parent="."]
+position = Vector2(92, 944)
+rotation = -2.39285
+scale = Vector2(0.526635, 0.539686)
+skew = 0.0610865
+texture = ExtResource("6_jp70s")
+
+[node name="QuitButton" type="Button" parent="Map"]
+anchors_preset = -1
+anchor_left = 0.462
+anchor_top = 0.595
+anchor_right = 0.462
+anchor_bottom = 0.605
+offset_left = -202.544
+offset_top = -288.64
+offset_right = 4.45599
+offset_bottom = -155.76
+rotation = -3.78387
+theme = ExtResource("1_geqro")
+theme_override_colors/font_color = Color(0.5661, 0, 0, 1)
+theme_override_font_sizes/font_size = 95
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4mb0b")
+text = "Quit"
+flat = true
+
+[node name="CreditButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.144
+anchor_top = 0.234
+anchor_right = 0.144
+anchor_bottom = 0.234
+offset_left = -75.48
+offset_top = -35.72
+offset_right = 75.52
+offset_bottom = 35.28
+theme = ExtResource("1_geqro")
+theme_override_colors/font_color = Color(0.772888, 0.622802, 0.477699, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uelgs")
+text = "Credits"
+flat = true
+
+[node name="transition" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4ugxv")
+}
+
+[node name="ColorRect" type="ColorRect" parent="transition"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Book" type="Sprite2D" parent="."]
+position = Vector2(620, 999)
+scale = Vector2(0.361328, 0.292969)
+texture = ExtResource("8_imtnr")
+
+[node name="How_to_Play" type="Button" parent="Book"]
+offset_left = -1066.0
+offset_top = -24.0
+offset_right = -841.0
+offset_bottom = 272.0
+rotation = 0.959931
+pivot_offset = Vector2(800, 1000)
+theme = ExtResource("1_geqro")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wj1od")
+text = "How to Play"
+flat = true
+text_overrun_behavior = 2
+autowrap_mode = 3
+
+[connection signal="pressed" from="SchildStehend/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="SchildHängend/OptionButton" to="." method="_on_option_button_pressed"]
+[connection signal="pressed" from="Map/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="animation_finished" from="transition" to="." method="_on_transition_animation_finished"]
+[connection signal="pressed" from="Book/How_to_Play" to="." method="_on_how_to_play_pressed"]

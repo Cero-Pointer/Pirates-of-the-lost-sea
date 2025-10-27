@@ -1,0 +1,77 @@
+[gd_scene load_steps=15 format=3 uid="uid://ytbysfrdexb3"]
+
+[ext_resource type="Texture2D" uid="uid://cs2t1grq6rya0" path="res://assets/weapons/White Slash Thin/File1.png" id="1_x50ef"]
+[ext_resource type="Texture2D" uid="uid://c3jfr1w6aq8hp" path="res://assets/weapons/White Slash Thin/File2.png" id="2_m4gca"]
+[ext_resource type="Texture2D" uid="uid://dekrjy082k834" path="res://assets/weapons/White Slash Thin/File3.png" id="3_dev0q"]
+[ext_resource type="Texture2D" uid="uid://d5311ghvmx0i" path="res://assets/weapons/White Slash Thin/File4.png" id="4_junat"]
+[ext_resource type="Texture2D" uid="uid://cr66kwhopljr7" path="res://assets/weapons/White Slash Thin/File5.png" id="5_sxyut"]
+[ext_resource type="Texture2D" uid="uid://fws6adpntkfq" path="res://assets/weapons/White Slash Thin/File6.png" id="6_6x2m6"]
+[ext_resource type="AudioStream" uid="uid://8o082uufbric" path="res://assets/audio/sword.wav" id="7_l1oaa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrbgl"]
+atlas = ExtResource("1_x50ef")
+region = Rect2(0, 0, 550, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0ars"]
+atlas = ExtResource("2_m4gca")
+region = Rect2(0, 0, 550, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frihi"]
+atlas = ExtResource("3_dev0q")
+region = Rect2(0, 0, 550, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg2u6"]
+atlas = ExtResource("4_junat")
+region = Rect2(0, 0, 550, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jaw3q"]
+atlas = ExtResource("5_sxyut")
+region = Rect2(0, 0, 550, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15yov"]
+atlas = ExtResource("6_6x2m6")
+region = Rect2(0, 0, 550, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wgbe7"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrbgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0ars")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frihi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg2u6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jaw3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15yov")
+}],
+"loop": false,
+"name": &"swing",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.5, 1)
+scale = Vector2(0.998182, 1.005)
+sprite_frames = SubResource("SpriteFrames_wgbe7")
+animation = &"swing"
+frame_progress = 1.0
+
+[node name="SwingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_l1oaa")
+bus = &"SFX"

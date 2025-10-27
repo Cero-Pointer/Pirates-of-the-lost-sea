@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxdoy15oc1lug"]
+
+[ext_resource type="Script" path="res://scenes/menu/how_to_play.gd" id="1_0g2c8"]
+[ext_resource type="Texture2D" uid="uid://vatpjpnj8lwq" path="res://assets/menu/bookStoreBig.png" id="2_qlvt0"]
+[ext_resource type="Theme" uid="uid://c8csw2huunlm7" path="res://assets/menu/fontMenu.tres" id="3_50ajw"]
+[ext_resource type="Texture2D" uid="uid://bsccf1crs77jw" path="res://assets/ui/ControlBarHead.png" id="4_fta08"]
+[ext_resource type="Texture2D" uid="uid://bvsjfly05o0yq" path="res://assets/ui/ButtonBig.png" id="5_ncgmu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8hfbt"]
+
+[node name="How_to_Play" type="CanvasLayer"]
+script = ExtResource("1_0g2c8")
+
+[node name="BookStoreBig" type="Sprite2D" parent="."]
+position = Vector2(961, 537.5)
+scale = Vector2(0.917939, 1.02385)
+texture = ExtResource("2_qlvt0")
+
+[node name="Label" type="Label" parent="BookStoreBig"]
+offset_left = -789.813
+offset_top = -169.458
+offset_right = -170.813
+offset_bottom = 124.542
+theme = ExtResource("3_50ajw")
+theme_override_font_sizes/font_size = 75
+text = "Move: W, A, S, D
+
+Shoot: Mouse"
+
+[node name="Label2" type="Label" parent="BookStoreBig"]
+offset_left = 212.432
+offset_top = -431.213
+offset_right = 820.432
+offset_bottom = 317.787
+theme = ExtResource("3_50ajw")
+theme_override_font_sizes/font_size = 84
+text = "Defeat the enemies,
+collect coins
+and level up your pirate!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ControlBarHead" type="Sprite2D" parent="BookStoreBig"]
+position = Vector2(-3.26817, 382.378)
+scale = Vector2(0.627672, 0.49036)
+texture = ExtResource("4_fta08")
+
+[node name="Label3" type="Label" parent="BookStoreBig"]
+offset_left = -809.422
+offset_top = -392.145
+offset_right = -185.422
+offset_bottom = -245.145
+theme = ExtResource("3_50ajw")
+theme_override_font_sizes/font_size = 100
+text = "How to Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBig" type="Sprite2D" parent="."]
+position = Vector2(477, 802)
+scale = Vector2(0.910645, 0.839028)
+texture = ExtResource("5_ncgmu")
+
+[node name="Button" type="Button" parent="ButtonBig"]
+offset_left = -245.0
+offset_top = -52.0
+offset_right = 242.0
+offset_bottom = 40.0
+theme = ExtResource("3_50ajw")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8hfbt")
+text = "Back to Main Menu"
+flat = true
+
+[connection signal="pressed" from="ButtonBig/Button" to="." method="_on_button_pressed"]

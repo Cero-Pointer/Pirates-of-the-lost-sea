@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuqkhslyx6bbb"]
+
+[ext_resource type="AudioStream" uid="uid://uity6txxwvqm" path="res://assets/audio/menu.wav" id="1_rockq"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_rockq")
