@@ -1,8 +1,8 @@
-# Pirate Survivor
+# Pirate of the lost sea
 
-![Screenshot of Pirate-Survivor](screenshot.png)
+![Screenshot of Pirate of the lost sea](screenshot.png)
 
-**Pirate Survivor** is a student project developed at **Leibniz University Hannover**, inspired by *Vampire Survivors* but set in a pirate-themed world. The goal was to create a fast-paced survival game experience using the Godot Engine.
+**Pirate of the lost sea** is a student project developed at **Leibniz University Hannover**, inspired by *Vampire Survivors* but set in a pirate-themed world. The goal was to create a fast-paced survival game experience using the Godot Engine.
 
 > 🏴‍☠️ This project was created as part of a university team assignment.  
 > I was actively involved in all parts of the development, including gameplay logic, scripting, and design decisions.
